@@ -1,17 +1,21 @@
 # === Python ===
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
 venv/
+ENV/
 
 # === Node.js ===
 node_modules/
+npm-debug.log*
 
-# === Environments (秘密鍵を絶対に守る) ===
+# === Environments (秘密鍵・環境変数) ===
 .env
 .env.local
 .dev.vars
 
-# === OS ===
+# === Operating System ===
 .DS_Store
 Thumbs.db
+desktop.ini
