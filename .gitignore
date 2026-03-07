@@ -31,7 +31,7 @@ venv/
 ENV/
 
 # === Security & Secrets (Zero Trust: Block ALL env files) ===
-# ユーザーが誤って自分のAPIキーを公開しないための安全策
+# Security: Prevent accidental leak of API keys and local secrets
 .env
 .env.*
 !.env.example
@@ -39,6 +39,17 @@ ENV/
 secrets.json
 *.pem
 *.key
+
+# === Data Artifacts (Local Processing Outputs) ===
+# Exclude raw data extractions to keep repo clean
+*.csv
+*.tsv
+*.jsonl
+*.parquet
+output/
+data/
+tmp/
+downloads/
 
 # === Editor / IDE (Keep repo clean) ===
 .vscode/
@@ -48,12 +59,6 @@ secrets.json
 !.vscode/extensions.json
 .idea/
 .history/
-
-# === Output / Logs (Examples often generate these) ===
-*.log
-output/
-data/
-tmp/
 
 # === Operating System ===
 .DS_Store
