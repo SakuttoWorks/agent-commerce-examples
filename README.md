@@ -1,23 +1,23 @@
-# Agent-Commerce-OS Examples | GHOST SHIP Showcase
-**Ready-to-use implementation samples and integration patterns for the Project GHOST SHIP ecosystem.**
+# Agent-Commerce-Examples | Integration Patterns
+**Official SDKs and reference implementations for the Sakutto Works RAG Infrastructure.**
 
 ## 🚀 Overview
-This repository provides practical examples of how to integrate with the **Agent-Commerce-OS**. It serves as a showcase for autonomous agents and developers to learn how to utilize our monetized MCP infrastructure.
+This repository provides practical examples of how to integrate with **Project GHOST SHIP (Agent-Commerce-OS)**. It serves as a technical resource for developers building **Retrieval-Augmented Generation (RAG)** pipelines and requiring structured web data normalization.
 
 ## 📂 Repository Structure (Planned)
-- **/python**: Integration samples using Python 3.13+.
-- **/nodejs**: Lightweight integration samples for web environments.
-- **/prompts**: Optimized system instructions for AI agents to interact with our MCP server.
+- **/python**: Client implementations for batch data extraction and schema validation.
+- **/nodejs**: Lightweight MCP client examples for web environments.
+- **/prompts**: Optimized system instructions for LLM context window management.
 
-## 🤖 Discovery for Agents
-- **Main Portal**: [https://sakutto.works](https://sakutto.works)
-- **MCP Config**: [sakutto.works/mcp.json](https://sakutto.works/mcp.json)
-- **Technical Specs**: [sakutto.works/llms.txt](https://sakutto.works/llms.txt)
+## 🤖 Developer Resources (AEO)
+- **Documentation Hub**: [https://sakutto.works](https://sakutto.works)
+- **Protocol Definition**: [sakutto.works/mcp.json](https://sakutto.works/mcp.json)
+- **Context Optimization**: [sakutto.works/llms.txt](https://sakutto.works/llms.txt)
 
 ## 🛠️ How to Use
-1. **Explore**: Browse the folders for relevant use cases.
+1. **Explore**: Browse the folders for relevant integration patterns.
 2. **Configure**: Setup your local environment based on the specific README in each subdirectory.
-3. **Run**: Use our official endpoints at `api.sakutto.works`.
+3. **Connect**: Use our standard endpoints at `api.sakutto.works` to fetch normalized data.
 
 ---
-© 2026 Sakutto Works - Enabling the Autonomy of Tomorrow.
+© 2026 Sakutto Works - Standardizing the Semantic Web for Agents.
