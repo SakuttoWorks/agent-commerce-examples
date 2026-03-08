@@ -1,0 +1,17 @@
+{
+  "source": "https://example-city.gov/waste-management",
+  "category": "Data Normalization Example",
+  "items": [
+    {
+      "name": "Television",
+      "disposal_fee": 2500,
+      "rule": "Requires pre-paid recycling ticket."
+    },
+    {
+      "name": "Bicycle",
+      "disposal_fee": 800,
+      "rule": "Collection by appointment only."
+    }
+  ],
+  "note": "Extracted and normalized via Agent-Commerce-OS."
+}
