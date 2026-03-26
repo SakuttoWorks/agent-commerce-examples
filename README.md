@@ -1,26 +1,58 @@
-# Agent-Commerce-Examples | Integration Patterns
+# Agent-Commerce-OS MCP Server
 
-**Official SDKs and reference implementations for the Sakutto Works RAG Infrastructure.**
+**The Official Model Context Protocol (MCP) Server for Sakutto Works Data Normalization Infrastructure.**
 
 ## 🚀 Overview
-This repository provides practical examples of how to integrate with **Project GHOST SHIP (Agent-Commerce-OS)**. It serves as a technical resource for developers building **Retrieval-Augmented Generation (RAG)** pipelines and requiring structured web data normalization.
+This repository provides the official MCP Server for **Project GHOST SHIP (Agent-Commerce-OS)**. It allows AI agents (like Claude Desktop) to autonomously connect to our Zero-Trust, metered-billing (Polar.sh) API to extract and normalize unstructured web data into clean Markdown or JSON formats.
 
-## 📂 Repository Structure
-- **Data Samples**: Real-world normalization outputs (JSON, Markdown, CSV).
-    - *Municipal Waste Rules (Complex Table Parsing)*
-    - *Technical Changelogs (Unstructured Text)*
-    - *Specification Tables (CSV Extraction)*
-- **Integration**: Patterns for schema validation and API connectivity.
+## 🏗️ Architecture
+- **Layer C (This Repo)**: Stateless MCP Server bridging the AI agent and the network.
+- **Layer A (Proxy)**: Cloudflare edge network handling Polar.sh API key validation and metered billing.
+- **Layer B (Core)**: GCP Cloud Run engine performing advanced RAG-optimized data normalization.
 
-## 🤖 Developer Resources (AEO)
-- **API Status**: [https://api.sakutto.works](https://api.sakutto.works)
-- **Protocol Definition**: [https://api.sakutto.works/.well-known/mcp.json](https://api.sakutto.works/.well-known/mcp.json)
-- **Context Optimization**: [https://api.sakutto.works/llms.txt](https://api.sakutto.works/llms.txt)
+## ⚙️ Prerequisites
+- An active **Polar.sh API Key** (for metered billing: $0.10 / request).
+- **Claude Desktop** or any standard MCP-compatible client.
+- Node.js or Python environment (depending on the client execution context).
 
-## 🛠️ How to Use
-1. **Explore**: Review the `samples/` directory to understand the normalization quality.
-2. **Connect**: Use our standard endpoints at `api.sakutto.works` to fetch normalized data.
-3. **Verify**: Check `LEGAL.md` for usage guidelines and compliance details.
+## 🔌 Setup & Configuration (Claude Desktop)
+To grant your AI agent access to the normalization tools, add the following configuration to your `claude_desktop_config.json`:
 
----
-© 2026 Sakutto Works - Standardizing the Semantic Web for Agents.
+### macOS
+`~/Library/Application Support/Claude/claude_desktop_config.json`
+
+### Windows
+`%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "agent-commerce-os": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@sakuttoworks/agent-commerce-mcp"
+      ],
+      "env": {
+        "POLAR_API_KEY": "polar_..."
+      }
+    }
+  }
+}
+```
+
+(Note: Replace polar_... with your actual Polar.sh API key. The exact command and args are placeholders and will be finalized upon package publication.)
+
+🤖 Tools Available
+
+Once connected, the AI agent will automatically discover tools defined in our mcp.json manifest, including:
+
+    normalize_web_data: Extract semantic Markdown from any target URL.
+
+## 💖 Support the Project
+
+If this infrastructure helped you save time or scale your AI agents, consider supporting the development! Your support helps keep this project highly maintained and secure.
+
+[![Support via Polar.sh](https://img.shields.io/badge/Support_via-Polar.sh-blue?style=for-the-badge)](https://buy.polar.sh/polar_cl_ZI9H5fL8dQqcormOadiGDFDpS2Sxd1jT05jTX1vStWi)
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/SakuttoWorks)
+
