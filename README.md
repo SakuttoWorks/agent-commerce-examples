@@ -47,15 +47,15 @@ To grant your AI agent access to the normalization tools, add the following conf
 }
 ```
 
-(Note: Replace polar_... with your actual Polar.sh API key. The exact command and args are placeholders and will be finalized upon package publication.)
+*(Note: Replace `polar_...` with your actual Polar.sh API key. The exact `command` and `args` are placeholders. Depending on the final implementation, this will be updated to use `npx` (Node.js) or `uvx` / `python -m` (Python) upon package publication.)*
 
 ---
 
 ## 🤖 Tools Available
 
-Once connected, the AI agent will automatically discover tools defined in our mcp.json manifest, including:
+Once connected, the AI agent will automatically discover tools exposed dynamically by the MCP server. (These are also cataloged in our `mcp.json` manifest for external registries):
 
-・normalize_web_data: Extract semantic Markdown from any target URL.
+- `normalize_web_data`: Extract semantic Markdown from any target URL.
 
 ---
 
