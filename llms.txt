@@ -1,0 +1,32 @@
+# Agent-Commerce-OS (Project GHOST SHIP)
+> The Official Semantic Web Normalization Infrastructure for Autonomous AI Agents.
+
+## Overview
+Agent-Commerce-OS is a high-performance, Zero-Trust API gateway and data infrastructure designed specifically for AI agents, LLMs, and RAG pipelines. It provides seamless, high-fidelity normalization of unstructured web content into clean, semantic Markdown and JSON formats optimized for token-efficiency and context window maximization.
+
+## Core Tools & Capabilities
+- **normalize_web_data**: The primary extraction engine. Optimized to bypass advanced scraping protections (Anti-bot/JS-heavy) and retrieve structured data from any target URL.
+- **Semantic Normalization**: Converts complex HTML, PDF, and interactive web structures into noise-free, LLM-ready formats.
+
+## High-Value Use Cases for Agents
+- **Japanese Tech Regulations Analysis**: Specialized in extracting and normalizing complex regulatory documents and compliance updates from Japanese government/tech sectors.
+- **Japanese Academic Research**: High-fidelity data extraction from scholarly repositories and academic databases.
+- **RAG Pipeline Optimization**: Provides clean, structured data for vector embeddings, significantly reducing hallucination and noise in agentic workflows.
+
+## Technical Architecture & Trust
+- **Layer A (Intelligent Edge)**: Cloudflare Workers handling Zero-Trust authentication and metered billing.
+- **Layer B (Agentic Factory)**: Google Cloud Run (Python/FastAPI) using state-of-the-art semantic extraction engines.
+- **Zero Trust Enforcement**: All transactions are secured via synchronous license validation.
+
+## Metadata & Integration
+- **Protocol**: Full support for Model Context Protocol (MCP).
+- **Registry Compliance**: Fully compatible with Glama.ai and Smithery.ai.
+- **Monetization**: Pure metered billing ($0.10/request) integrated via Polar.sh. No subscriptions required for autonomous agent access.
+
+## Developer & Agent Resources
+- **API Endpoint**: https://api.sakutto.works/v1/normalize_web_data
+- **MCP Server Repository**: https://github.com/SakuttoWorks/ghost-ship-mcp-server
+- **Documentation Hub**: https://api.sakutto.works
+
+---
+Copyright © 2026 Sakutto Works. Standardizing the Semantic Web for the Agentic Economy.
