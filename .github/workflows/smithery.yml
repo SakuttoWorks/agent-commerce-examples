@@ -1,12 +1,15 @@
 name: Publish to Smithery
 
-# Allow manual triggering of the workflow from the GitHub Actions tab
 on:
   workflow_dispatch:
 
+env:
+  # Suppress Node.js deprecation warnings in GitHub Actions
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
-    runs-on: ubuntu-latest # Run on a reliable Linux environment to prevent OS-specific CLI issues
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -18,11 +21,13 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          # Pre-install esbuild to prevent CLI interactive prompts from hanging the CI
+          npm install -D esbuild@^0.27.0
 
       - name: Publish to Smithery Registry
         env:
-          # Load the Smithery token configured in repository secrets
           SMITHERY_TOKEN: ${{ secrets.SMITHERY_TOKEN }}
-        # Execute the publish command in the isolated CI environment
-        run: npx @smithery/cli@latest publish
+        # Automate the interactive CLI prompt by piping the server name "agent-commerce-os"
+        run: echo "agent-commerce-os" | npx @smithery/cli@latest publish
