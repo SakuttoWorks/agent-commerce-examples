@@ -28,6 +28,13 @@
                             "json"
                         ],
                         "description": "Desired output format. Supported values: 'json', 'markdown'."
+                    },
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Optional Lite GraphQL-style field selection to minimize token consumption."
                     }
                 },
                 "required": [
